@@ -1,6 +1,6 @@
 {
   "name": "Codex",
-  "build": {
+  "build": unlimited version 
     "dockerfile": "Dockerfile",
     "context": "..",
     "platform": "linux/arm64"
