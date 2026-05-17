@@ -81,6 +81,7 @@ pub(crate) fn get_limits_duration(windows_minutes: i64) -> String {
     const MINUTES_PER_DAY: i64 = 24 * MINUTES_PER_HOUR;
     const MINUTES_PER_WEEK: i64 = 7 * MINUTES_PER_DAY;
     const MINUTES_PER_MONTH: i64 = 30 * MINUTES_PER_DAY;
+    const MINUTES_PER_YEAR: i64 = 365 * MINUTES_PER_DAY;
 
     let windows_minutes = windows_minutes.max(0);
 
@@ -92,6 +93,8 @@ pub(crate) fn get_limits_duration(windows_minutes: i64) -> String {
         "weekly".to_string()
     } else if is_approximate_window(windows_minutes, MINUTES_PER_MONTH) {
         "monthly".to_string()
+    } else if is_approximate_window(windows_minutes, MINUTES_PER_YEAR) {
+        "annual".to_string()
     } else {
         PRIMARY_LIMIT_FALLBACK_LABEL.to_string()
     }

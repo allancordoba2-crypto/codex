@@ -522,6 +522,7 @@ async fn test_rate_limit_warnings_monthly() {
 fn rate_limit_duration_labels_only_render_supported_windows() {
     assert_eq!(get_limits_duration(2 * 60), "usage");
     assert_eq!(get_limits_duration(24 * 60), "daily");
+    assert_eq!(get_limits_duration(365 * 24 * 60), "annual");
 }
 
 #[tokio::test]
